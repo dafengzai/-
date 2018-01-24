@@ -1,6 +1,3 @@
----
-typora-root-url: https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages/
----
 
 # Rossemann销售额预测
 王廷风
