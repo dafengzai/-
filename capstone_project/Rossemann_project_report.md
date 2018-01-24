@@ -1,5 +1,5 @@
 ---
-typora-root-url: MarkdownImages
+typora-root-url: https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages/
 ---
 
 # Rossemann销售额预测
@@ -52,7 +52,7 @@ train.csv包含的特征有：
 
 `raw_train_df.head()`
 
-![snap_screen_20180103165911](/snap_screen_20180103165911.png)
+![snap_screen_20180103165911](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//snap_screen_20180103165911.png)
 
 store.csv包含的特征有：
 
@@ -66,7 +66,7 @@ store.csv包含的特征有：
 
 `store_df.head()`
 
-![snap_screen_20180103170200](/snap_screen_20180103170200.png)
+![snap_screen_20180103170200](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//snap_screen_20180103170200.png)
 
 可以看出原数据集中有着许多的异常值，例如train.csv中不开门的店`train_df[train_df.Open==0]`没有销售额，而store.csv中的缺失数据有：
 
@@ -92,19 +92,19 @@ dtype: int64
 
 我先查看日期与销售额之间的关系，我在4种StoreType各任取一加店铺，查看销售额随日期的变化情况：
 
-![Sales to Date](/1.png)
+![Sales to Date](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//1.png)
 
 可以看出，Sales与日期之间是有着相关性的，Sales随日期的变化而大致呈现出某种趋势，例如12月份销售额为全年最高(圣诞大促销)。因此我认为日期方面的特征对模型的训练是十分重要的。
 
 而对于促销Promo与商店类型StoreType特征，
 
-![2](/2.png)
+![2](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//2.png)
 
 可以看出不同商店类型间每年的销售情况存在着差异，并且当有促销时（Promo=1）销售额发生了显著的增长。
 
 对于总体的特征情况，有：
 
-![3](/3.png)
+![3](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//3.png)
 
 可以看出一些特征间存在着一定的相关性，如Sales与Customers，Promo2、Promo2SinceYear与Promo2SinceMonth,Promo2SinceWeek。因此有着进一步特征提取的空间，如Sales与Customers的相关性很大，因此可以在训练时只使用Sales相关特征而不适用Customers的。
 
@@ -281,7 +281,7 @@ num_boost_round = 300
 
 并在一开始没有引入与销售额有关的变量，此时模型得分在0.13-0.15左右，较好的模型得分为：
 
-![snap_screen_20171225203420](/snap_screen_20171225203420.png)
+![snap_screen_20171225203420](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//snap_screen_20171225203420.png)
 
 可以看到离10%仍有一段距离，在之后的调试过程中，我在该竞赛的Disussion上收获到了许多的思路与灵感，特别是此处的[思路分享](https://www.kaggle.com/c/rossmann-store-sales/discussion/17896)让我收获颇丰，其中对我帮助最大的是对销售数据的引入。经过对数据集的观察之后，我引入了几个与销售额有关的特征：
 
@@ -307,7 +307,7 @@ num_boost_round = 4000
 
 经过4000轮的训练过后，模型最终的得分为：
 
-![snap_screen_20171225210400](/snap_screen_20171225210400.png)
+![snap_screen_20171225210400](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//snap_screen_20171225210400.png)
 
 达到了10%的既定目标，可以认为是一个比较有效的模型。
 
@@ -337,7 +337,7 @@ num_boost_round = 4000
 
 使用xgboost模型的一大好处便是模型决定划分时的依据是使gain值最大的特征，得分越高的特征对于模型划分来说就越重要，因此模型也可以反映出特征的重要情况，通过下图我们就能看出我所选取的各个特征在模型中的重要性情况。
 
-![snap_screen_20171226204603](/snap_screen_20171226204603.png)
+![snap_screen_20171226204603](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages//snap_screen_20171226204603.png)
 
 可以看出，因为Sales与日期间有着很大的相关关系，因此特征DayOfYear无疑是最重要的，而其他日期特征如Day、WeekOfYear等也十分重要。而其他的比如竞争对手开业月数，竞争对手距离这些特征也反映了商店面临的竞争，自然对销售额影响比较重要，其他的特征也都有着各自对Sales的影响。
 

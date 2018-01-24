@@ -23,11 +23,11 @@ gbm = xgb.train(params, dtrain, num_boost_round, evals=watchlist, \
   early_stopping_rounds=500, feval=rmspe_xg, verbose_eval=True)
 ```
 
-![snap_screen_20171227200441](https://github.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/tree/master/capstone_project/MarkdownImages/snap_screen_20171227200441.png)
+![snap_screen_20171227200441](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages/snap_screen_20171227200441.png)
 
 模型最终得分为0.11772，处于当时排行榜10%的位置。
 
-![snap_screen_20171225210400](https://github.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/tree/master/capstone_project/MarkdownImages/snap_screen_20171225210400.png)
+![snap_screen_20171225210400](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages/snap_screen_20171225210400.png)
 
 包含的文件中：
 
