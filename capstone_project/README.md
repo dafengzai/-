@@ -28,7 +28,7 @@ gbm = xgb.train(params, dtrain, num_boost_round, evals=watchlist, \
 模型最终得分为：
 
 ![snap_screen_20171225210400](https://raw.githubusercontent.com/dafengzai/Udacity-Machine-Learning-Engineer-Nanodegree-Project/master/capstone_project/MarkdownImages/snap_screen_20171225210400.png)
-
+得分排在当时排行榜的10%位置。
 
 
 包含的文件有：
